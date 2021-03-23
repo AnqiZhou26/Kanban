@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+    <title>Todo App</title>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Kanban board</h1>
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
+        </div>
+
+        <div id="navigation">
+            <ul>
+                <li><a href="/logout">Logout</a></li>
+                <li><a href="https://www.google.com/gmail/about/">Email</a></li>
+                <li><a href="https://www.timeanddate.com/calendar/">Calendar</a></li>
+            </ul>
+        </div>
+        
+        <div class="row">
+            <div class="column" id="column-to-do">
+                <h3>To do</h3>
+                <ol>
+                    {% for todo in incomplete %}
+                    <li style="font-size: 12pt">{{ todo.text }} 
+                        <a href="{{ url_for('ongoing', id=todo.id) }}">Ongoing</a> 
+                        <div class='deleteMe'>
+                            <a href="{{ url_for('removed', id=todo.id) }}">X</a>
+                        </div> 
+                    </li>
+                    {% endfor %}
+                </ol>
+                <form action="{{ url_for('add') }}" method="POST">
+                    <fieldset>
+                        <div class="required">
+                            <label for="task">Task Name:</label>
+                            <input type="text" name="todoitem">
+                        </div>
+                          
+                        <legend>Add a new todo item:</legend>
+            
+                        <div class="button">
+                            <button type="submit">Add Task</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="column" id="column-doing">
+                <h3>Doing</h3>
+                <ol>
+                    {% for todo in ongoing %}
+                    <li style="font-size: 12pt">{{ todo.text }} 
+                        <a href="{{ url_for('complete', id=todo.id) }}">Complete</a> 
+                        <div class='deleteMe'>
+                            <a href="{{ url_for('removed', id=todo.id) }}">X</a>
+                        </div> 
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="column" id="column-done">
+                <h3>Done</h3>
+                <ol>
+                    {% for todo in complete %}
+                    <li style="font-size: 12pt">{{ todo.text }} 
+                        <div class='deleteMe'>
+                            <a href="{{ url_for('removed', id=todo.id) }}">X</a>
+                        </div> 
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>  
+    </div>
+
+</body>
+</html>

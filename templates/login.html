@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Please Sign In</h1>
+    <form action="{{ url_for('login') }}" method="POST">
+        <fieldset>
+            <div class="required">
+                <label for="inputUsername">Username:</label>
+                <input type="text" name="username">
+                <label for="inputPassword">Password:</label>
+                <input type="text" name="password">
+            </div>
+            
+            <div class="button">
+                <button type="submit">Sign in</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

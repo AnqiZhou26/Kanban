@@ -1,0 +1,132 @@
+/* General Formatting */
+body {
+  background: white;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  color: #555;
+  min-width: 1140px;
+}
+
+#header {
+  /* header gradient color background */
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(#090707),
+    to(#716e77)
+  );
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+#container {
+  width: 1000px;
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #323232;
+}
+
+#navigation ul li {
+  /* top navigation bar formatting */
+  float: left;
+  display: inline;
+  white-space: nowrap;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  width: 30%;
+  display: inline-block;
+}
+
+#navigation ul li:not(:last-child) {
+  /* eliminate the line after the last child */
+  border-right: solid 1px #bbb;
+}
+
+#navigation a {
+  /* format the link in navigation bar */
+  text-decoration: none;
+  font-weight: bold;
+  color: goldenrod;
+}
+
+.column {
+  /* display the to-do, doing and done in three columns */
+  float: left;
+  width: 32.66%;
+  display: inline-block;
+  text-align: center;
+  background: linear-gradient(gray, rgb(187, 185, 185));
+  color: white;
+  height: 300px;
+  margin-top: 1%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column:not(:last-child) {
+  margin-right: 1%;
+}
+
+.column ol {
+  margin: 10px;
+}
+
+/* customize each column */
+#column-to-do ol li {
+  background-color: #a71930;
+  margin-top: 10px;
+  border: 1px solid #716e77;
+}
+
+#column-doing ol li {
+  background-color: #0077c8;
+  margin-top: 10px;
+  border: 1px solid grey;
+}
+
+#column-done ol li {
+  background-color: #537b35;
+  margin-top: 10px;
+  border: 1px solid grey;
+}
+
+/* add task deletion functionality */
+.deleteMe {
+  float: right;
+  background: red;
+}
+
+.deleteMe a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+.required label:after {
+  content: "*";
+  color: red;
+  display: inline;
+}
+
+form {
+  /* center the form */
+  margin: 0 auto;
+  width: 280px;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
