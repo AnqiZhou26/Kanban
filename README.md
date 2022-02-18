@@ -1,6 +1,6 @@
 # CS162 Web Application
 
-##Project Overview
+## Project Overview
 
 I have created a Kanban application, with a user login and sign up system. The user has to sign in to see and use the kanban.
 If the user enter a username that does not exist in the User database, he will be directed to the sign up page. 
